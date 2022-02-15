@@ -36,9 +36,9 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags: 'github-${{ env.BuildNumber }}'
         # Path to the build context
-        path: ''
+        path: '/'
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        dockerfile: 'Dockerfile'
+        dockerfile: '/Dockerfile'
         # Whether to push the image
         push: false
   
@@ -74,8 +74,8 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags: 'github-${{ env.BuildNumber }}'
         # Path to the build context
-        path: ''
+        path: '/'
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        dockerfile: 'Dockerfile'
+        dockerfile: '/Dockerfile'
         # Whether to push the image
         push: true
