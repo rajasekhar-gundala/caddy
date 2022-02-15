@@ -10,7 +10,7 @@ on:
 
 env:
   BuildNumber: ${{ github.run_id }}-${{ github.run_number }}
-  ImageName: 'tuneitme/caddyserver'
+  ImageName: 'tuneitme/caddy'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
