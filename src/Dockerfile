@@ -1,9 +1,9 @@
-FROM caddy:2.4.6-builder-alpine AS builder
+FROM caddy:2.6.2-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
-#    --with github.com/greenpau/caddy-authorize \
-#    --with github.com/greenpau/caddy-auth-portal \
+    --with github.com/greenpau/caddy-authorize \
+    --with github.com/greenpau/caddy-auth-portal \
     --with github.com/greenpau/caddy-trace \
     --with github.com/abiosoft/caddy-hmac \
     --with github.com/caddy-dns/dnspod \
@@ -19,8 +19,10 @@ RUN xcaddy build \
     --with github.com/caddy-dns/vultr \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
-    --with github.com/abiosoft/caddy-json-parse
+    --with github.com/hslatman/caddy-crowdsec-bouncer \
+    --with github.com/abiosoft/caddy-json-parse \
+    --with github.com/porech/caddy-maxmind-geolocation
 
-FROM caddy:2.4.6-alpine
+FROM caddy:2.6.2-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
