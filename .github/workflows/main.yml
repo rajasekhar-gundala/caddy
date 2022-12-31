@@ -88,7 +88,7 @@ jobs:
     - name: Sign container image
       run: |
         cosign sign --key cosign.key \
-          ghcr.io/your-org/your-repo:some-tag
+          tuneitme/caddy-github-${{ env.BuildNumber }}
       env:
         COSIGN_PASSWORD: ${{ secrets.CosignPassword }}
         
@@ -98,6 +98,6 @@ jobs:
           -a "repo=${{ github.repository }}" \
           -a "workflow=${{ github.workflow }}" \
           -a "ref=${{ github.sha }}" \
-          ghcr.io/your-org/your-repo:some-tag
+          tuneitme/caddy-github-${{ env.BuildNumber }}
       env:
         COSIGN_PASSWORD: ${{ secrets.CosignPassword }}
