@@ -79,13 +79,3 @@ jobs:
         dockerfile: 'src/Dockerfile'
         # Whether to push the image
         push: true
-        
-    - name: Sign container image
-      run: |
-        cosign sign --key cosign.key \
-          -a "repo=${{ github.repository }}" \
-          -a "workflow=${{ github.workflow }}" \
-          -a "ref=${{ github.sha }}" \
-          tuneitme/caddy-github-${{ env.BuildNumber }}
-      env:
-        COSIGN_PASSWORD: ${{ secrets.CosignPassword }}
