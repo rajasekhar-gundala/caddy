@@ -80,19 +80,7 @@ jobs:
         # Whether to push the image
         push: true
         
-    - uses: sigstore/cosign-installer@main
-
-    - name: Write signing key to disk (only needed for `cosign sign --key`)
-      run: echo "${{ secrets.SIGNING_SECRET }}" > cosign.key
-
     - name: Sign container image
-      run: |
-        cosign sign --key cosign.key \
-          tuneitme/caddy-github-${{ env.BuildNumber }}
-      env:
-        COSIGN_PASSWORD: ${{ secrets.CosignPassword }}
-        
-    - name: Sign container image with annotations from our environment
       run: |
         cosign sign --key cosign.key \
           -a "repo=${{ github.repository }}" \
