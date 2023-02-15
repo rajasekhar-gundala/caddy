@@ -41,6 +41,23 @@ jobs:
         dockerfile: 'src/Dockerfile'
         # Whether to push the image
         push: false
+        
+    - name: push-to-ghcr
+      uses: macbre/push-to-ghcr@v12
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        image_name: rajaseg/caddy
+        path: 'src'
+        dockerfile: 'src/Dockerfile'
+        #context: # optional, default is .
+        # Docker repository to push an image to, defaults to ghcr.io
+        repository: ghcr.io
+        # A username to use when pushing an image to docker.io (defaults to the github.actor)
+        #docker_io_user: # optional
+        # Your docker.io token created via https://hub.docker.com/settings/security
+        #docker_io_token: # optional
+        # Image tag, e.g. latest. Will overwrite the tag latest tag on a push, and have no effect on a release.
+        image_tag: latest
   
 #    - name: Trivy Scan - Unknown, Low and Medium Severity
 #      uses: aquasecurity/trivy-action@0.0.7
