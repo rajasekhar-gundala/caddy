@@ -48,17 +48,12 @@ jobs:
         #GitHub Credentials
         github_token: ${{ secrets.PERSONAL_TOKEN }}
         image_name: rajaseg/caddy
-        #Docker Credentials
-        username: ${{ secrets.DockerHubUser }}
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.DockerHubPassword }}
         #Dockerfile Path
         path: 'src'
         dockerfile: 'src/Dockerfile'
         #context: # optional, default is .
         # Docker repository to push an image to, defaults to ghcr.io
         repository: ghcr.io
-        repository: tuneitme/caddy
         # A username to use when pushing an image to docker.io (defaults to the github.actor)
         #docker_io_user: # optional
         # Your docker.io token created via https://hub.docker.com/settings/security
@@ -94,20 +89,20 @@ jobs:
 #        # severities of vulnerabilities to be displayed
 #        severity: HIGH,CRITICAL
         
-#    - name: Push Docker image
-#      uses: docker/build-push-action@v1.1.0
-#      with:
-#        # Username used to log in to a Docker registry. If not set then no login will occur
-#        username: ${{ secrets.DockerHubUser }}
-#        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-#        password: ${{ secrets.DockerHubPassword }}
-#        # Docker repository to tag the image with
-#        repository: ${{ env.ImageName }}
-#        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-#        tags: 'github-${{ env.BuildNumber }}'
-#        # Path to the build context
-#        path: 'src'
-#        # Path to the Dockerfile (Default is '{path}/Dockerfile')
-#        dockerfile: 'src/Dockerfile'
-#        # Whether to push the image
-#        push: true
+    - name: Push Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: ${{ secrets.DockerHubUser }}
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.DockerHubPassword }}
+        # Docker repository to tag the image with
+        repository: ${{ env.ImageName }}
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 'github-${{ env.BuildNumber }}'
+        # Path to the build context
+        path: 'src'
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        dockerfile: 'src/Dockerfile'
+        # Whether to push the image
+        push: true
