@@ -43,7 +43,7 @@ jobs:
 #        push: false
         
     - name: Build Image & Push to GHCR
-      uses: macbre/push-to-ghcr@v12
+      uses: macbre/push-to-ghcr@v13
       with:
         #GitHub Credentials
         github_token: ${{ secrets.PERSONAL_TOKEN }}
