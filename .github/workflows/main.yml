@@ -47,7 +47,7 @@ jobs:
       with:
         #GitHub Credentials
         github_token: ${{ secrets.PERSONAL_TOKEN }}
-        image_name: rajaseg/caddy
+        image_name: rajasekhar-gundala/caddy
         #Dockerfile Path
         path: 'src'
         dockerfile: 'src/Dockerfile'
