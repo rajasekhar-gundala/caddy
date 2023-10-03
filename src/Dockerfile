@@ -16,7 +16,6 @@ RUN xcaddy build \
     --with github.com/caddy-dns/vultr \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
-    --with github.com/hslatman/caddy-crowdsec-bouncer \
     --with github.com/abiosoft/caddy-json-parse \
     --with github.com/porech/caddy-maxmind-geolocation
 
