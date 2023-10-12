@@ -1,7 +1,7 @@
 name: Publish Docker
 on: [push]
 jobs:
-  build:
+  github-repo:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,3 +18,19 @@ jobs:
         buildoptions: "--compress --force-rm"
         platforms: linux/amd64,linux/arm64
         tags: "latest,${{ steps.pre-step.outputs.release-version }}"
+  docker-repo:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@v5
+      with:
+        name: tuneitme/caddy
+        username: ${{ secrets.DOCKERHUBUSER }}
+        password: ${{ secrets.DOCKERHUBPASSWORD }}
+        dockerfile: src/Dockerfile
+        buildoptions: "--compress --force-rm"
+        platforms: linux/amd64,linux/arm64
+        tags: "latest"
