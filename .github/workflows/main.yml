@@ -16,7 +16,7 @@ jobs:
         registry: ghcr.io
         dockerfile: src/Dockerfile
         buildoptions: "--compress --force-rm"
-        platforms: linux/amd64,linux/arm64
+#        platforms: linux/amd64,linux/arm64
         tags: "latest,${{ steps.pre-step.outputs.release-version }}"
   docker-repo:
     runs-on: ubuntu-latest
@@ -32,5 +32,5 @@ jobs:
         password: ${{ secrets.DOCKERHUBPASSWORD }}
         dockerfile: src/Dockerfile
         buildoptions: "--compress --force-rm"
-        platforms: linux/amd64,linux/arm64
+#        platforms: linux/amd64,linux/arm64
         tags: "latest"
