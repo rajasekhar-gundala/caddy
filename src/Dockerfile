@@ -1,7 +1,5 @@
 FROM caddy:2.8.4-builder-alpine AS builder
 
-CGO_ENABLED=1
-
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/abiosoft/caddy-hmac \
@@ -19,8 +17,7 @@ RUN xcaddy build \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
     --with github.com/abiosoft/caddy-json-parse \
-    --with github.com/porech/caddy-maxmind-geolocation \
-    --with github.com/teler-sh/teler-caddy
+    --with github.com/porech/caddy-maxmind-geolocation
 
 FROM caddy:2.8.4-alpine
 
