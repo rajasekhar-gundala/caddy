@@ -17,7 +17,8 @@ RUN xcaddy build \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
     --with github.com/abiosoft/caddy-json-parse \
-    --with github.com/porech/caddy-maxmind-geolocation
+    --with github.com/porech/caddy-maxmind-geolocation \
+    --with github.com/teler-sh/teler-caddy@latest
 
 FROM caddy:2.8.4-alpine
 
