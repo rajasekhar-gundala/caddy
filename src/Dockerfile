@@ -1,5 +1,7 @@
 FROM caddy:2.8.4-builder-alpine AS builder
 
+CGO_ENABLED=1
+
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/abiosoft/caddy-hmac \
