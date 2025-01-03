@@ -17,7 +17,12 @@ RUN xcaddy build \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
     --with github.com/abiosoft/caddy-json-parse \
-    --with github.com/porech/caddy-maxmind-geolocation
+    --with github.com/porech/caddy-maxmind-geolocation \
+    -with github.com/WeidiDeng/caddy-cloudflare-ip \
+    --with github.com/fvbommel/caddy-combine-ip-ranges \
+    --with github.com/mholt/caddy-l4 \
+    --with github.com/caddyserver/transform-encoder \
+    --with github.com/fabriziosalmi/caddy-waf
 
 FROM caddy:2.8.4-alpine
 
