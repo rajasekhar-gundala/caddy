@@ -22,6 +22,7 @@ RUN xcaddy build \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/mholt/caddy-l4 \
     --with github.com/caddyserver/transform-encoder \
+    --with github.com/oschwald/maxminddb-golang \
     --with github.com/fabriziosalmi/caddy-waf
 
 FROM caddy:2.8.4-alpine
