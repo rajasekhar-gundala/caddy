@@ -21,8 +21,7 @@ RUN xcaddy build \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/jasonlovesdoggo/caddy-defender \
-    --with github.com/ewen-lbh/caddy-i18n@v0.1.2 \
-    --with github.com/fabriziosalmi/caddy-waf=./
+    --with github.com/ewen-lbh/caddy-i18n@v0.1.2
 
 FROM caddy:2.9.1-alpine
 
