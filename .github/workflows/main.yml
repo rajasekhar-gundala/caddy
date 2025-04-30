@@ -4,7 +4,7 @@ jobs:
   github-repo:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Publish to Registry
@@ -21,7 +21,7 @@ jobs:
   docker-repo:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Publish to Registry
