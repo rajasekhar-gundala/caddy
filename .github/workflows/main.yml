@@ -18,19 +18,15 @@ jobs:
         buildoptions: "--compress --force-rm"
 #        platforms: linux/amd64,linux/arm64
         tags: "latest,${{ steps.pre-step.outputs.release-version }}"
-    - name: Trivy Action
-    # You may pin to the exact commit or the version.
-    # uses: lazy-actions/gitrivy@6edf95fdc8b1fb841a974536316b209cd16f9000
-      uses: lazy-actions/gitrivy@v3
+    - name: Aqua Security Trivy
+      uses: aquasecurity/trivy-action@0.31.0
       with:
-        # Trivy version
-        trivy_version: latest        
-        # severities of vulnerabilities (separated by commma)
+        scan-type: image
+        vuln-type: os,library
         severity: HIGH,CRITICAL
-        ignore_unfixed: false
-        fail_on_vulnerabilities: false
-        token: ${{ secrets.PERSONAL_TOKEN }}
-        image: python:3.4-alpine
+        github-pat: ${{ secrets.PERSONAL_TOKEN }}
+        skip-setup-trivy: false
+        token-setup-trivy: ${{ secrets.PERSONAL_TOKEN }}
   docker-repo:
     runs-on: ubuntu-latest
     steps:
