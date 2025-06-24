@@ -30,7 +30,7 @@ jobs:
         ignore_unfixed: false
         fail_on_vulnerabilities: false
         token: ${{ secrets.PERSONAL_TOKEN }}
-        image: rajasekhar-gundala/caddy
+        image: python:3.4-alpine
   docker-repo:
     runs-on: ubuntu-latest
     steps:
