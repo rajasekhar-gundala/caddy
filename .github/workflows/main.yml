@@ -22,14 +22,13 @@ jobs:
       uses: aquasecurity/trivy-action@0.31.0
       with:
         image-ref: 'ghcr.io/rajasekhar-gundala/caddy:latest'
-        format: 'sarif'
-        output: 'trivy-results.sarif'
+        format: 'table'
         scan-type: image
         vuln-type: os,library
         severity: HIGH,CRITICAL
         github-pat: ${{ secrets.PERSONAL_TOKEN }}
         skip-setup-trivy: false
-        token-setup-trivy: ${{ secrets.PERSONAL_TOKEN }}
+        #token-setup-trivy: ${{ secrets.PERSONAL_TOKEN }}
   docker-repo:
     runs-on: ubuntu-latest
     steps:
