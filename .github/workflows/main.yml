@@ -28,7 +28,8 @@ jobs:
         # severities of vulnerabilities (separated by commma)
         severity: HIGH,CRITICAL
         ignore_unfixed: false
-        fail_on_vulnerabilities: false    
+        fail_on_vulnerabilities: false
+        token: ${{ secrets.PERSONAL_TOKEN }}
   docker-repo:
     runs-on: ubuntu-latest
     steps:
