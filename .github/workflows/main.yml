@@ -23,9 +23,11 @@ jobs:
       with:
         image-ref: 'ghcr.io/rajasekhar-gundala/caddy:latest'
         format: 'table'
-        scan-type: image
-        vuln-type: os,library
-        severity: HIGH,CRITICAL
+        exit-code: '1'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
+        #scan-type: 'image'
         github-pat: ${{ secrets.PERSONAL_TOKEN }}
         skip-setup-trivy: false
         #token-setup-trivy: ${{ secrets.PERSONAL_TOKEN }}
