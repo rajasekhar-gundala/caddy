@@ -20,7 +20,10 @@ RUN xcaddy build \
     --with github.com/porech/caddy-maxmind-geolocation \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
-    --with github.com/jasonlovesdoggo/caddy-defender \
+#    --with github.com/jasonlovesdoggo/caddy-defender \
+    --with pkg.jsn.cam/caddy-defender \
+    --with github.com/darkweak/souin/plugins/caddy \
+    --with github.com/darkweak/storages/otter/caddy \
     --with github.com/ewen-lbh/caddy-i18n@v0.1.2
 
 FROM caddy:2.10.0-alpine
