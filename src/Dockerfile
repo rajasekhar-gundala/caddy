@@ -20,7 +20,8 @@ RUN xcaddy build \
     --with github.com/darkweak/souin/plugins/caddy \
     --with github.com/darkweak/storages/otter/caddy \
     --with github.com/ewen-lbh/caddy-i18n@v0.1.2 \
-    --with github.com/mholt/caddy-l4
+    --with github.com/mholt/caddy-l4 \
+    --with github.com/kassner/caddy-trapdoor
 
 FROM caddy:2.10.2-alpine
 
