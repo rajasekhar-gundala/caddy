@@ -12,9 +12,7 @@ RUN xcaddy build \
     --with github.com/porech/caddy-maxmind-geolocation \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
-    --with github.com/mholt/caddy-l4/modules/l4proxy \
-    --with github.com/mholt/caddy-l4/modules/l4tls \
-    --with github.com/mholt/caddy-l4/modules/l4proxyprotocol \
+    --with github.com/mholt/caddy-l4 \
     --with github.com/caddyserver/transform-encoder \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
